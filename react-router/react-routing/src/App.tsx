@@ -1,20 +1,23 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
-import Page1 from './assets/page1'
-import Page2 from './assets/page2'
-import Home from './assets/Home'
+import About from './components/About'
+import Contact from './components/Contact'
+import Home from './components/Home'
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/About">About</Link>
+        <Link to="/Contact">Contact</Link>
+      </nav>
+
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="./assets/page1" element={<Page1 />} />
-        <Route path="./assets/page2" element={<Page2 />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Contact" element={<Contact />} />
       </Routes>
-      <Routes />
     </BrowserRouter>
   )
 }
-
-export default App
