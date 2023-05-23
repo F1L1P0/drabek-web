@@ -1,6 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
 import productsArray from './data/products'
-import { useEffect } from 'react'
 
 interface IProduct {
   id: number
@@ -10,11 +9,8 @@ interface IProduct {
 }
 
 export default function Products() {
-  const params = useParams()
-  console.log(params)
-
   const products = productsArray.map((product: IProduct) => (
-    <Link key={product.id} to={`/Products/${product.id}`}>
+    <Link key={product.id} to={`/products/${product.id}`}>
       <div
         className="box"
         style={{
